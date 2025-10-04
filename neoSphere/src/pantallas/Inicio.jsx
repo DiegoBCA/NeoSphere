@@ -29,10 +29,16 @@ function Inicio() {
         </h1>
 
         <button
-          onClick={() => navigate("/simulator")}
-          className="bg-gray-700 hover:bg-gray-600 cursor-pointer text-white px-6 py-3 rounded-lg transition"
+          onClick={() => navigate("/astronomy-simulator")} //
+          className="bg-gray-700 hover:bg-gray-600 cursor-pointer text-white px-6 py-3 rounded-lg transition transition absolute top-19/20 left-1/20"
         >
-          Iniciar
+          Astronamy
+        </button>
+        <button
+          onClick={() => navigate("/skyfallx-game")}
+          className="bg-[#1D0175] hover:bg-[#FFDD0F] cursor-pointer text-white px-7 py-3 rounded-lg transition absolute top-19/20 left-12/20"
+        >
+          Sky Fall X
         </button>
       </div>
     </div>
