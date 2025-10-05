@@ -311,9 +311,6 @@ export const simulateAsteroidImpact = ({
   let final_message = `Impacto en tierra con una velocidad de ${(
     v_final / 1000
   ).toFixed(2)} km/s.`;
-
-  // ❌ ELIMINADA toda la lógica de impacto en agua.
-
   const airBlast = calculateAirBlast(energy_final, false);
   const thermal = calculateThermalRadiation(energy_final);
   const crater = calculateCrater(density_kgm3, v_final, L0_m, target_density);

@@ -28,7 +28,7 @@ const NavBar = () => {
           onClick={() => navigate("/")}
           className="bg-gray-700 hover:bg-yellow-400 text-white hover:text-black font-semibold py-2 px-4 rounded transition duration-300 shadow-md"
         >
-          Volver al Inicio
+          Back to menu
         </button>
       </div>
     </nav>
