@@ -1,0 +1,22 @@
+{
+  "builds": [
+    {
+      "src": "./neoSphere/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "startCommand": "npm run dev",
+        "buildCommand": "npm run build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/[^.]+",
+      "dest": "index.html"
+    }
+  ],
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "./neoSphere/dist",
+  "framework": "vite"
+}
