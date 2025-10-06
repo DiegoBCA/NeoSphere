@@ -3,13 +3,13 @@ import { useGesture } from "@use-gesture/react";
 //import "./DomeGallery.css";
 
 // 🖼️ Importar imágenes locales
-import imag1 from "../assets/img/astero/imag1.png";
-import imag2 from "../assets/img/astero/imag2.png";
-import imag3 from "../assets/img/astero/imag3.png";
-import imag4 from "../assets/img/astero/imag4.png";
-import imag5 from "../assets/img/astero/imag5.png";
-import imag6 from "../assets/img/astero/imag6.png";
-import imag7 from "../assets/img/astero/imag7.png";
+import imag1 from "../assets/img/astero/imag1.jpg";
+import imag2 from "../assets/img/astero/imag2.jpg";
+import imag3 from "../assets/img/astero/imag3.jpg";
+import imag4 from "../assets/img/astero/imag4.jpg";
+import imag5 from "../assets/img/astero/imag5.jpg";
+import imag6 from "../assets/img/astero/imag6.jpg";
+import imag7 from "../assets/img/astero/imag7.jpg";
 
 const DEFAULT_IMAGES = [
   { src: imag1, alt: "Imagen 1" },
@@ -106,7 +106,7 @@ export default function DomeGallery({
   minRadius = 600,
   maxRadius = Infinity,
   padFactor = 0.25,
-  overlayBlurColor = "#060010",
+  overlayBlurColor = "#1b202c",
   maxVerticalRotationDeg = DEFAULTS.maxVerticalRotationDeg,
   dragSensitivity = DEFAULTS.dragSensitivity,
   enlargeTransitionMs = DEFAULTS.enlargeTransitionMs,

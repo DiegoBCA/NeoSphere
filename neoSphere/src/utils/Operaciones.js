@@ -53,7 +53,7 @@ export const simulateAsteroidImpact = ({
     if (term_ln_if_prime <= 0)
       return {
         error:
-          "Parámetros no físicos para fragmentación. Revisar diámetro o densidad.",
+          "Non-physical parameters for fragmentation. Check diameter or density.",
       };
 
     const If_prime = Math.log(term_ln_if_prime);
@@ -127,14 +127,14 @@ export const simulateAsteroidImpact = ({
       Math.pow(CONST.G_E, -0.22) *
       Math.pow(Math.sin(theta_rad), 1 / 3);
     const D_tc_km = D_tc_m / 1000;
-    const Dc_km = 3.2; // Diámetro crítico para la transición Simple a Complejo
+    const Dc_km = 3.2; // Diámetro crítico para la transición Simple a Complex
     let D_fr_m = 0,
       type = "";
     if (D_tc_km < 2.56) {
       type = "Simple";
       D_fr_m = 1.25 * D_tc_m;
     } else {
-      type = "Complejo";
+      type = "Complex";
       const D_fr_km = (1.17 * Math.pow(D_tc_km, 1.13)) / Math.pow(Dc_km, 0.13);
       D_fr_m = D_fr_km * 1000;
     }
@@ -145,7 +145,7 @@ export const simulateAsteroidImpact = ({
     // Cálculo de la radiación térmica y efectos de ignición
     if (velocity_kms <= 15)
       return {
-        message: "Velocidad insuficiente para una bola de fuego significativa.",
+        message: "Insufficient speed for a significant fireball.",
       };
 
     const fireball_radius_m = 0.002 * Math.pow(energy_j, 1 / 3);
@@ -162,7 +162,7 @@ export const simulateAsteroidImpact = ({
       const ignition_threshold =
         ignitionData[material] * Math.pow(energy_Mt, 1 / 6);
       if (thermal_exposure_Jm2 > ignition_threshold) {
-        ignition_effects += `${material} se incendia. `;
+        ignition_effects += `${material} catches fire. `;
       }
     }
 
@@ -170,7 +170,7 @@ export const simulateAsteroidImpact = ({
       fireballRadius_km: fireball_radius_m / 1000,
       thermalExposure_Jm2: thermal_exposure_Jm2,
       ignitionEffects:
-        ignition_effects || "No se espera ignición de materiales comunes.",
+        ignition_effects || "Ignition of common materials is not expected.",
     };
   };
 
@@ -188,10 +188,10 @@ export const simulateAsteroidImpact = ({
     let mercalli = "I";
     if (M_eff > 2) mercalli = "II-III";
     if (M_eff > 4) mercalli = "IV-V";
-    if (M_eff > 5) mercalli = "VI-VII (Daño ligero)";
-    if (M_eff > 6) mercalli = "VII-VIII (Daño moderado)";
-    if (M_eff > 7) mercalli = "IX-X (Daño severo)";
-    if (M_eff > 8) mercalli = "XI-XII (Destrucción)";
+    if (M_eff > 5) mercalli = "VI-VII (Minor damage)";
+    if (M_eff > 6) mercalli = "VII-VIII (Moderate damage)";
+    if (M_eff > 7) mercalli = "IX-X (Severe damage)";
+    if (M_eff > 8) mercalli = "XI-XII (Destruction)";
 
     return {
       richterMagnitude: richter_magnitude,
@@ -207,7 +207,7 @@ export const simulateAsteroidImpact = ({
     const r_km = r_m / 1000;
     const D_fr_km = crater_D_fr_m / 1000;
     if (r_km < D_fr_km / 2)
-      return { message: "Ubicación dentro del cráter final." };
+      return { message: "Location within the final crater." };
 
     const dc = 2400 * Math.pow(D_fr_km / 2, -1.62);
     const alpha = 2.65;
@@ -263,18 +263,15 @@ export const simulateAsteroidImpact = ({
       (((5 * p) / (7 * P0)) * c0) / Math.sqrt(1 + (6 * p) / (7 * P0));
 
     // Descripción de daños basada en sobrepresión (Pa)
-    let damage = "Sin daños significativos.";
-    if (p > 6900) damage = "Rotura de ventanas de vidrio.";
+    let damage = "No significant damage.";
+    if (p > 6900) damage = "Broken glass windows.";
     if (p > 22900)
-      damage =
-        "Daño severo en techos y tabiques interiores de casas de madera.";
-    if (p > 26800)
-      damage = "Colapso casi total de edificios de estructura de madera.";
-    if (p > 42600) damage = "Colapso de edificios de mampostería.";
-    if (p > 121000) damage = "Colapso de puentes de celosía.";
+      damage = "Severe damage to roofs and interior walls of wooden houses.";
+    if (p > 26800) damage = "Almost total collapse of wooden-framed buildings.";
+    if (p > 42600) damage = "Collapse of masonry buildings.";
+    if (p > 121000) damage = "Collapse of truss bridges.";
     if (p > 273000)
-      damage =
-        "Edificios de oficinas con armazón de acero sufren distorsión extrema.";
+      damage = "Steel-framed office buildings suffer extreme distortion.";
 
     return {
       overpressure_Pa: overpressure_Pa,
@@ -308,9 +305,9 @@ export const simulateAsteroidImpact = ({
     (CONST.PI / 12) * density_kgm3 * Math.pow(L0_m, 3) * Math.pow(v_final, 2);
 
   let target_density = CONST.RHO_T_CRYSTALLINE;
-  let final_message = `Impacto en tierra con una velocidad de ${(
-    v_final / 1000
-  ).toFixed(2)} km/s.`;
+  let final_message = `Impact on land at a speed of ${(v_final / 1000).toFixed(
+    2
+  )} km/s.`;
   const airBlast = calculateAirBlast(energy_final, false);
   const thermal = calculateThermalRadiation(energy_final);
   const crater = calculateCrater(density_kgm3, v_final, L0_m, target_density);
@@ -322,7 +319,7 @@ export const simulateAsteroidImpact = ({
 
   // Devolver todos los resultados
   return {
-    scenario: "Impacto en Superficie",
+    scenario: "Surface Impact",
     finalImpactMessage: final_message,
     impactEnergyMegatons: energy_final / 4.184e15,
     crater: crater,
