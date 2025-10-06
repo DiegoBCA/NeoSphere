@@ -20,16 +20,19 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Routes>
-        {/* Rutas principales */}
-        <Route path="/" element={<Inicio />} />
-        <Route path="/astronomy-simulator" element={<Astronomy1 />} />
-        <Route path="/skyfallx-game" element={<SkyfallX1 />} />
-        <Route path="/video1" element={<VideoLayout1 />} />
-        <Route path="/impacto" element={<Impacto />} />
-        <Route path="/result" element={<Resultados />} />
-        <Route path="/orbita" element={<Orbit />} />
-      </Routes>
+      {/* Contenedor principal que permite el scroll si el contenido supera el alto de la pantalla */}
+      <div className="min-h-screen overflow-auto">
+        <Routes>
+          {/* Rutas principales */}
+          <Route path="/" element={<Inicio />} />
+          <Route path="/astronomy-simulator" element={<Astronomy1 />} />
+          <Route path="/skyfallx-game" element={<SkyfallX1 />} />
+          <Route path="/video1" element={<VideoLayout1 />} />
+          <Route path="/impacto" element={<Impacto />} />
+          <Route path="/result" element={<Resultados />} />
+          <Route path="/orbita" element={<Orbit />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

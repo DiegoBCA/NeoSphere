@@ -48,7 +48,7 @@ function Inicio() {
             as="button"
             onClick={() => navigate("/astronomy-simulator")}
           >
-            Astronomy
+            Astroviary
           </HoverBorderGradient>
 
           <HoverBorderGradient

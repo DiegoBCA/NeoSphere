@@ -144,6 +144,9 @@ const Impacto = () => {
       case "Crater":
         return (
           <div className="space-y-1 text-sm pt-2">
+            <p className="font-medium text-red-600 text-lg">
+              !!Red circle in the map is the size of the crater!!
+            </p>
             <p className="font-medium">
               Final Diameter:{" "}
               <span className="font-bold text-white text-base">
@@ -261,7 +264,9 @@ const Impacto = () => {
 
   // --- NUEVO: Textos para el header según el botón ---
   const headerTextsByEffect = {
-    Crater: ["This is the crater effect!"],
+    Crater: [
+      "This is the crater effect, You can see in the map a red circle thats the diameter of the Crater!!",
+    ],
     AirBlast: ["Air blast is destructive!"],
     "Return of ejections": ["Ejected material returns to the ground."],
     "Thermal Radiation": ["Thermal radiation can ignite fires."],

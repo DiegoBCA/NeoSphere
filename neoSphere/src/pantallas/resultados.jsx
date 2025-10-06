@@ -20,7 +20,7 @@ const mitigationStrategies = [
     name: "Surface Coating",
     title: "Surface Coating:",
     description:
-      "Cover part of the asteroid with a reflective or absorbent material to modify its thermal balance and take advantage of the Yarkovsky effect (a change in orbit -acceleration - due to asymmetric thermal emission).",
+      "Cover part of the asteroid with a reflective or absorbent material to modify its thermal balance and take advantage of the Yarkovsky effect.",
     videoSrc: SurfaceVideo, // <<-- ¡CAMBIA A URL EMBEBIDA!
   },
   {
