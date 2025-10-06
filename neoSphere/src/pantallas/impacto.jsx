@@ -145,7 +145,7 @@ const Impacto = () => {
         return (
           <div className="space-y-1 text-sm pt-2">
             <p className="font-medium text-red-600 text-lg">
-              !!Red circle in the map is the size of the crater!!
+              !!Red circle on the map is the size of the crater!!
             </p>
             <p className="font-medium">
               Final Diameter:{" "}
