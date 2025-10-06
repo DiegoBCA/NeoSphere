@@ -248,6 +248,34 @@ const SkyfallX1 = () => {
           >
             Launch to Earth
           </button>
+<<<<<<< Updated upstream
+=======
+        </section>
+      </main>
+
+      {/* Modal de advertencia */}
+      {showWarning && (
+        <div
+          style={{ pointerEvents: "auto" }}
+          className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-100 z-[9999] p-4 transition-opacity duration-700 ${
+            fadeIn ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <div className="bg-red-600 text-white rounded-lg p-6 max-w-xl text-center transform transition-transform duration-700 ease-out scale-90">
+            <h2 className="text-2xl font-bold mb-4">⚠️ Warning</h2>
+            <p className="mb-6">
+              You are about to unleash an asteroid upon Earth. Its impact will
+              bring chaos, destruction, and irreversible consequences to the
+              world. Are you certain you want to proceed?
+            </p>
+            <button
+              onClick={() => setShowWarning(false)}
+              className="bg-white text-red-600 px-6 py-2 rounded hover:bg-gray-100 transition"
+            >
+              Understood
+            </button>
+          </div>
+>>>>>>> Stashed changes
         </div>
       </div>
     </div>
