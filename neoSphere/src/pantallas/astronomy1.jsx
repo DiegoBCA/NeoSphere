@@ -26,13 +26,13 @@ const Astronomy1 = () => {
       {/* CORRECCIÓN 2: Se usa 'left-1/2' para centrar horizontalmente y 
         se añade 'z-10' para asegurar que el botón esté sobre la galería.
       */}
-      <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 z-10">
+      <div className="absolute bottom-40 left-11/25 transform -translate-x-1/2 z-10">
         <HoverBorderGradient
           containerClassName="rounded-lg transition flex items-center justify-center px-10 py-4 text-xl min-w-[200px] bg-black border-2 border-gray-500 hover:bg-[#FFDD0F]"
           as="button"
           onClick={() => navigate("/orbita")}
         >
-          Órbitas
+          Orbits
         </HoverBorderGradient>
       </div>
     </div>
