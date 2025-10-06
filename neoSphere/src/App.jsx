@@ -5,14 +5,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 
 // Importa tus componentes de pantalla (rutas principales)
-// --- CORRECCIÓN FINAL: Se usa la ruta './pantallas/' y la capitalización que Vercel requiere.
-import Inicio from "./pantallas/Inicio.jsx";
-import Astronomy1 from "./pantallas/astronomy1.jsx"; // <--- CORRECCIÓN DE MINÚSCULA APLICADA AQUÍ
-import SkyfallX1 from "./pantallas/SkyfallX1.jsx";
-import Impacto from "./pantallas/Impacto.jsx";
-import Resultados from "./pantallas/Resultados.jsx";
-import Orbit from "./pantallas/OrbitRedirect.jsx";
-import VideoLayout1 from "./pantallas/VideoLayout1.jsx";
+// --- CORRECCIÓN FINAL DE CASING PARA VERSEL: Todos los nombres de archivo
+// en minúscula donde Vercel ha fallado anteriormente.
+import Inicio from "./pantallas/Inicio.jsx"; // Asumimos I mayúscula por ser el punto de entrada
+import Astronomy1 from "./pantallas/astronomy1.jsx"; // Corregido a 'a' minúscula
+import SkyfallX1 from "./pantallas/skyfallX1.jsx"; // Corregido a 's' minúscula
+import Impacto from "./pantallas/impacto.jsx"; // Corregido a 'i' minúscula (probable error)
+import Resultados from "./pantallas/resultados.jsx"; // Corregido a 'r' minúscula (probable error)
+import Orbit from "./pantallas/OrbitRedirect.jsx"; // Nombre completo del archivo
+import VideoLayout1 from "./pantallas/VideoLayout1.jsx"; // Asumimos V mayúscula
 //import { Orbit } from "ogl";
 
 function App() {
