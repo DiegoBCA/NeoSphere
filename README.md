@@ -19,4 +19,10 @@ npm install leaflet
 router-dom:
 npm install react-router-dom
 
+github pages
+npm install gh-pages
+
+framer motion
+npm install framer-motion
+
 
