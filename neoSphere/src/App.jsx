@@ -5,14 +5,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 
 // Importa tus componentes de pantalla (rutas principales)
-import Inicio from "./pantallas/inicio";
-import Astronomy1 from "./pantallas/astronomy1";
-import SkyfallX1 from "./pantallas/skyfallX1";
-import Impacto from "./pantallas/impacto";
-import Resultados from "./pantallas/Resultados";
-import Orbit from "./pantallas/orbit";
-import VideoLayout1 from "./pantallas/VideoLayout1";
-//import { Orbit } from "ogl";
+// --- CORRECCIÓN DE CASING (Sensibilidad a Mayúsculas/Minúsculas) ---
+// Se asume que el directorio es 'Pantallas' y los archivos inician con mayúscula.
+import Inicio from "./Pantallas/Inicio";
+import Astronomy1 from "./Pantallas/Astronomy1";
+import SkyfallX1 from "./Pantallas/SkyfallX1";
+import Impacto from "./Pantallas/Impacto";
+import Resultados from "./Pantallas/Resultados";
+import Orbit from "./pantallas/OrbitRedirect";
+import VideoLayout1 from "./Pantallas/VideoLayout1";
+//import { Orbit } from "ogl"; // Comentario, no es necesario cambiar
 
 function App() {
   return (
