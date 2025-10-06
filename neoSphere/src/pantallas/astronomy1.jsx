@@ -3,12 +3,15 @@ import { useNavigate } from "react-router-dom";
 import DomeGallery from "../components/DomeGallery";
 import { HoverBorderGradient } from "../components/hover-border-gradient";
 
-const astronomy1 = () => {
+// CORRECCIÓN 1: El nombre del componente debe ser con mayúscula inicial (PascalCase).
+const Astronomy1 = () => {
   const navigate = useNavigate();
 
+  // La función onEmpezarClick no se usa, pero la mantenemos por si la necesitas.
   const onEmpezarClick = () => {
-    navigate("/"); // Cambia esto según tu estructura de rutas
+    navigate("/");
   };
+
   return (
     <div
       style={{
@@ -19,7 +22,11 @@ const astronomy1 = () => {
       }}
     >
       <DomeGallery openedImageWidth="80vw" openedImageHeight="80vh" />
-      <div className="absolute bottom-40 left-45/100 transform -translate-x-1/2">
+
+      {/* CORRECCIÓN 2: Se usa 'left-1/2' para centrar horizontalmente y 
+        se añade 'z-10' para asegurar que el botón esté sobre la galería.
+      */}
+      <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 z-10">
         <HoverBorderGradient
           containerClassName="rounded-lg transition flex items-center justify-center px-10 py-4 text-xl min-w-[200px] bg-black border-2 border-gray-500 hover:bg-[#FFDD0F]"
           as="button"
@@ -32,4 +39,4 @@ const astronomy1 = () => {
   );
 };
 
-export default astronomy1;
+export default Astronomy1;
