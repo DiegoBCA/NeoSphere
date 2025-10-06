@@ -5,6 +5,6 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "./",
-  //base: process.env.VITE_BASE_PATH || "/NeoSphere/tree/main/neoSphere",
+  // Se elimina 'base: "./",'. Vercel por defecto usa la raíz ('/').
+  // Se elimina la línea comentada para evitar confusiones.
 });
