@@ -86,11 +86,12 @@ const SkyfallX1 = () => {
         {/* Sección izquierda: Imagen y parámetros */}
         {/* AJUSTE CLAVE 1: Limito la altura del recuadro izquierdo */}
         <div className="w-full md:w-1/3 bg-gray-900 rounded-lg p-4 border-2 border-yellow-400 h-fit max-h-[85vh]">
-          <div className="flex justify-center mb-5">
+          <div className="flex justify-center mb-5 ">
             <img
               src={asteroidImage}
               alt="Asteroid"
-              className="w-60 h-80 object-contain"
+              // CLASES CORREGIDAS Y AUMENTADAS: Usando valores válidos de Tailwind.
+              className="w-360 h-90 object-contain"
             />
           </div>
           <p className="text-center text-2xl mb-5 font-bold text-yellow-400">
