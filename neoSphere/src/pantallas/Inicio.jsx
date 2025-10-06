@@ -1,6 +1,8 @@
 import React from "react";
 import Particles from "../components/Particles";
 import { useNavigate } from "react-router-dom";
+import BlurText from "../components/BlurText";
+import { HoverBorderGradient } from "../components/hover-border-gradient";
 
 function Inicio() {
   const navigate = useNavigate();
@@ -20,26 +22,43 @@ function Inicio() {
         />
       </div>
 
-      <div className="absolute flex flex-col justify-center items-center z-10">
-        <h1 className="text-center text-6xl font-light mb-10">
-          <span className="text-white tracking-wide drop-shadow-md">NEO</span>
-          <span className="ml-3 text-white font-light drop-shadow-sm">
-            Sphere
-          </span>
-        </h1>
+      <div className="absolute flex flex-col justify-center items-center z-10 w-full">
+        {/* Título animado */}
+        <div className="flex flex-row items-center mb-10">
+          <BlurText
+            text="NEO"
+            delay={100}
+            animateBy="letters"
+            direction="top"
+            className="text-white text-9xl font-light tracking-wide drop-shadow-md mr-5"
+          />
+          <BlurText
+            text="Sphere"
+            delay={300}
+            animateBy="letters"
+            direction="top"
+            className="text-white text-9xl font-light drop-shadow-sm"
+          />
+        </div>
 
-        <button
-          onClick={() => navigate("/astronomy-simulator")} //
-          className="bg-gray-700 hover:bg-gray-600 cursor-pointer text-white px-6 py-3 rounded-lg transition transition absolute top-19/20 left-1/20"
-        >
-          Astronamy
-        </button>
-        <button
-          onClick={() => navigate("/skyfallx-game")}
-          className="bg-[#1D0175] hover:bg-[#FFDD0F] cursor-pointer text-white px-7 py-3 rounded-lg transition absolute top-19/20 left-12/20"
-        >
-          Sky Fall X
-        </button>
+        {/* Botones alineados */}
+        <div className="flex flex-row justify-between w-[550px] mt-20">
+          <HoverBorderGradient
+            containerClassName=" hover:bg-[#FFDD0F]  rounded-lg transition flex items-center justify-center px-15 py-4 text-xl min-w-[200px]"
+            as="button"
+            onClick={() => navigate("/astronomy-simulator")}
+          >
+            Astronomy
+          </HoverBorderGradient>
+
+          <HoverBorderGradient
+            containerClassName=" hover:bg-[#1D0175]  rounded-lg transition flex items-center justify-center px-15 py-4 text-xl min-w-[200px]"
+            as="button"
+            onClick={() => navigate("/skyfallx-game")}
+          >
+            Sky Fall X
+          </HoverBorderGradient>
+        </div>
       </div>
     </div>
   );
